@@ -1,9 +1,11 @@
 " Match TODO comments
 syntax region frrString start=/"/ skip=/\\"/ end=/"/
 syntax keyword frrTodo TODO XXX FIXME NOTE contained
-syntax match frrComment /!.*/ contains=frrTodo
+syntax match frrComment /\!.*/ contains=frrTodo
 syntax match frrIpv4 "\v<\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}>"
 syntax match frrPrefixIpv4 "\v<\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\/\d{1,2}"
+syntax match frrIpv6Tok "\v<\x{1,4}"
+syntax match frrIpv6Num "\v<\x{1,4}:\x{1,4}:\x{1,4}:\x{1,4}:\x{1,4}:\x{1,4}:\x{1,4}:\x{1,4}>"
 
 " Some extra characters to unclude in keywords
 setlocal iskeyword+=-
@@ -12,9 +14,7 @@ setlocal iskeyword+=-
 syntax keyword frrSpecial
 			\ log
 			\ debug
-syntax keyword frrType
-			\ i[nterface]
-			\ r[outer]
+
 syntax keyword frrKeywords
 			\ topology
 			\ a
@@ -1001,7 +1001,6 @@ syntax keyword frrKeywords
 			\ secondary
 			\ segment
 			\ segment-list
-			\ segment-routing
 			\ select-defer-time
 			\ self
 			\ self-originate
@@ -1246,13 +1245,66 @@ syntax keyword frrKeywords
 			\ zapi-packets
 			\ zebra
 
+syntax keyword frrFirstConfigLevel
+			\ access-list
+			\ agentx
+			\ allow-external-route-update
+			\ banner
+			\ bfd
+			\ bgp
+			\ debug
+			\ domainname
+			\ dump
+			\ enable
+			\ end
+			\ evpn
+			\ exit
+			\ find
+			\ fpm
+			\ frr
+			\ hostname
+			\ i[nterface]
+			\ ip
+			\ ipv6
+			\ key
+			\ l2vpn
+			\ line
+			\ list
+			\ log
+			\ mac
+			\ mpls
+			\ nexthop-group
+			\ no
+			\ output
+			\ password
+			\ pbr
+			\ pbr-map
+			\ pseudowire
+			\ quit
+			\ route-map
+			\ r[outer]
+			\ router-id
+			\ rpki
+			\ segment-routing
+			\ service
+			\ terminal
+			\ username
+			\ vni
+			\ vrf
+			\ vrrp
+			\ zebra
+
+
 highlight default link frrTodo Todo
 highlight default link frrString String
 highlight default link frrComment Comment
 highlight default link frrKeywords Keyword
 highlight default link frrSpecial Special
-highlight default link frrType Type
+highlight default link frrFirstConfigLevel Type
 highlight default link frrIpv4 Number
 highlight default link frrPrefixIpv4 Number
+highlight default link frrIpv6Num Number
+highlight default link frrIpv6Tok Number
+highlight default link frrPrefixIpv6 Number
 
 
