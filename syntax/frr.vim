@@ -4,7 +4,7 @@ syntax keyword frrTodo TODO XXX FIXME NOTE contained
 syntax match frrComment /\!.*/ contains=frrTodo
 syntax match frrIpv4 "\v<\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}>"
 syntax match frrPrefixIpv4 "\v<\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\/\d{1,2}"
-syntax match frrIpv6Tok "\v<\x{1,4}"
+"syntax match frrIpv6Tok "\v<\x{1,4}"
 syntax match frrIpv6Num "\v<\x{1,4}:\x{1,4}:\x{1,4}:\x{1,4}:\x{1,4}:\x{1,4}:\x{1,4}:\x{1,4}>"
 
 " Some extra characters to unclude in keywords
