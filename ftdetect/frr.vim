@@ -11,6 +11,7 @@ autocmd BufNewFile,BufRead bgpd_vrf*conf setfiletype frr
 autocmd BufNewFile,BufRead bgpd_vrf_prefix*conf setfiletype frr
 autocmd BufNewFile,BufRead eigrpd*conf setfiletype frr
 autocmd BufNewFile,BufRead evpn*conf setfiletype frr
+autocmd BufNewFile,BufRead frr*conf setfiletype frr
 autocmd BufNewFile,BufRead isisd*conf setfiletype frr
 autocmd BufNewFile,BufRead ldpd*conf setfiletype frr
 autocmd BufNewFile,BufRead ldp*conf setfiletype frr
